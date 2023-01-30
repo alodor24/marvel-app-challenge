@@ -1,10 +1,15 @@
 import FooterApp from "../FooterApp";
 import NavbarApp from "../NavbarApp";
 
-const Layout = () => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <NavbarApp />
+      <main>{children}</main>
       <FooterApp />
     </>
   );

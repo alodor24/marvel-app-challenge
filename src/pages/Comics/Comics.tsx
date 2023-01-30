@@ -1,5 +1,11 @@
+import Layout from "../../components/Layout";
+
 const Comics = () => {
-  return <div>Comics</div>;
+  return (
+    <Layout>
+      <div>Comics</div>
+    </Layout>
+  );
 };
 
 export default Comics;

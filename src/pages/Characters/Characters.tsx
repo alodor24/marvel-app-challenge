@@ -1,5 +1,11 @@
+import Layout from "../../components/Layout";
+
 const Characters = () => {
-  return <div>Characters</div>;
+  return (
+    <Layout>
+      <div>Characters</div>
+    </Layout>
+  );
 };
 
 export default Characters;
