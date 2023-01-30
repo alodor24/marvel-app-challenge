@@ -2,6 +2,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CommonLinkStyle } from "../../mixins";
+import { MEDIA_SIZE } from "../../theme";
 
 export const Wrapper = styled(Navbar)`
   padding: 1rem 0;
@@ -20,7 +21,7 @@ export const Wrapper = styled(Navbar)`
 export const ContainerNav = styled(Nav)`
   gap: 1rem;
 
-  @media (max-width: 768px) {
+  @media (${MEDIA_SIZE}) {
     margin: 3rem 0 1rem 0;
   }
 `;

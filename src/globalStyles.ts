@@ -5,6 +5,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Quicksand', sans-serif;
   }
+
+  main {
+    min-height: calc(100vh - 276.3px);
+  }
 `;
 
 export default GlobalStyle;
