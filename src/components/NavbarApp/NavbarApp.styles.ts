@@ -1,5 +1,5 @@
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CommonLinkStyle } from "../../mixins";
 import { MEDIA_SIZE } from "../../theme";
@@ -26,13 +26,17 @@ export const ContainerNav = styled(Nav)`
   }
 `;
 
-export const LinkNav = styled(Link)`
+export const LinkNav = styled(NavLink)`
   ${CommonLinkStyle}
   font-size: ${(props) => props.theme.fontSize[1]};
   color: ${(props) => props.theme.colors.white[0]};
   transition: ${(props) => props.theme.transition[0]};
 
   :hover {
+    color: ${(props) => props.theme.colors.red[0]};
+  }
+
+  &.active {
     color: ${(props) => props.theme.colors.red[0]};
   }
 `;

@@ -1,6 +1,7 @@
 import { Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoMarvel from "../../assets/images/logo-marvel.svg";
+import { NavbarList } from "./constants";
 import * as SC from "./NavbarApp.styles";
 
 const NavbarApp = () => {
@@ -23,9 +24,11 @@ const NavbarApp = () => {
           className="justify-content-end"
         >
           <SC.ContainerNav>
-            <SC.LinkNav to="/">Home</SC.LinkNav>
-            <SC.LinkNav to="/characters">Characters</SC.LinkNav>
-            <SC.LinkNav to="/comics">Comics</SC.LinkNav>
+            {NavbarList.map((item) => (
+              <SC.LinkNav key={item.id} to={item.path}>
+                {item.name}
+              </SC.LinkNav>
+            ))}
           </SC.ContainerNav>
         </Navbar.Collapse>
       </Container>
