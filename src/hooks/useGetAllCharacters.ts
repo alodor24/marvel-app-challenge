@@ -1,16 +1,13 @@
-import { QueryObserverResult, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { get } from "../utils";
+import { CharactersResponse } from "./types";
 
 export const GET_ALL_CHARACTERS = "GET_ALL_CHARACTERS";
 
-const getAllCharacters = () => get("/characters");
+const getAllCharacters = (): Promise<CharactersResponse> => get("/characters");
 
-const useGetAllCharacters = ({
-  ...queryOptions
-}): QueryObserverResult<unknown[]> => {
-  return useQuery([GET_ALL_CHARACTERS], () => getAllCharacters(), {
-    ...queryOptions,
-  });
+const useGetAllCharacters = () => {
+  return useQuery([GET_ALL_CHARACTERS], () => getAllCharacters());
 };
 
 export default useGetAllCharacters;
