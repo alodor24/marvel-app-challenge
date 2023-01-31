@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import LogoMarvel from "../../assets/images/logo-marvel.svg";
 import * as SC from "./FooterApp.styles";
 
@@ -7,7 +8,7 @@ const FooterApp = () => {
     <SC.Footer>
       <Container>
         <SC.Wrapper>
-          <img src={LogoMarvel} alt="Logo Marvel" loading="lazy" width={130} />
+          <LazyLoadImage src={LogoMarvel} alt="Logo Marvel" width={130} />
           <SC.Text>
             Created by José Méndez |{" "}
             <SC.ExternalLink href="" target="_blank">
