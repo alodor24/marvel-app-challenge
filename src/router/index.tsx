@@ -15,7 +15,15 @@ export const router = createBrowserRouter([
     element: <Characters />,
   },
   {
+    path: "/characters/:characterId",
+    element: <Characters />,
+  },
+  {
     path: "/comics",
+    element: <Comics />,
+  },
+  {
+    path: "/comics/:comicId",
     element: <Comics />,
   },
 ]);

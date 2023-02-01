@@ -40,6 +40,16 @@ export const CardList = styled(Card)`
     color: ${(props) => props.theme.colors.white[0]};
     margin-bottom: 1rem;
   }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+`;
+
+export const Price = styled.p`
+  color: ${(props) => props.theme.colors.white[0]};
 `;
 
 export const ButtonList = styled(Button)`

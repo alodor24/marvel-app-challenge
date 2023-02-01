@@ -1,3 +1,4 @@
+import { PageViewMode } from "../../components/constants";
 import Hero from "../../components/Hero";
 import Layout from "../../components/Layout";
 import List from "../../components/List";
@@ -14,7 +15,7 @@ const Characters = () => {
       ) : (
         <>
           <Hero title="Marvel Characters" />
-          <List data={data?.results} />
+          <List data={data?.results} mode={PageViewMode.CHARACTERS} />
         </>
       )}
     </Layout>

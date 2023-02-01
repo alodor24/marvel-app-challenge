@@ -1,5 +1,4 @@
 import { Container, Navbar } from "react-bootstrap";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import LogoMarvel from "../../assets/images/logo-marvel.svg";
 import { NavbarList } from "./constants";
@@ -11,7 +10,7 @@ const NavbarApp = () => {
       <Container>
         <Navbar.Brand>
           <Link to="/">
-            <LazyLoadImage src={LogoMarvel} width={150} alt="Logo Marvel" />
+            <img src={LogoMarvel} width={150} alt="Logo Marvel" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

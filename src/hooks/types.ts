@@ -13,6 +13,10 @@ export type Character = {
   id: number;
   modified: string;
   name: string;
+  prices: {
+    price: number;
+    type: string;
+  }[];
   resourceURI: string;
   series: {};
   stories: {};
