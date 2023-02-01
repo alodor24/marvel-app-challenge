@@ -1,3 +1,4 @@
+import Hero from "../../components/Hero";
 import Layout from "../../components/Layout";
 import List from "../../components/List";
 import Loader from "../../components/Loader";
@@ -12,7 +13,7 @@ const Characters = () => {
         <Loader />
       ) : (
         <>
-          <div>Characters</div>
+          <Hero title="Marvel Characters" />
           <List data={data?.results} />
         </>
       )}
