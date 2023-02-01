@@ -8,7 +8,10 @@ const theme = {
   fontSize: ["1.1rem", "1.2rem"],
   fontWeight: ["700"],
   transition: ["all ease-in-out .3s"],
-  shadow: ["0px 10px 34px 2px rgba(23, 155, 191, 0.61)"],
+  shadow: [
+    "0px 10px 34px 2px rgba(23, 155, 191, 0.61)",
+    "0 5px 15px rgba(0, 0, 0, 0.4)",
+  ],
   minHeight: "calc(100vh - 276.3px)",
 };
 

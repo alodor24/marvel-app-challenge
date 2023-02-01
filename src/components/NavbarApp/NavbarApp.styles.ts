@@ -1,5 +1,5 @@
 import { Nav, Navbar } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CommonLinkStyle } from "../../mixins";
 import { MEDIA_SIZE } from "../../theme";
