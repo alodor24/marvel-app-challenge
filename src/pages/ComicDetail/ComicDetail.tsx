@@ -4,10 +4,15 @@ import Detail from "../../components/Detail";
 import Layout from "../../components/Layout";
 import Loader from "../../components/Loader";
 import useGetComic from "../../hooks/useGetComic";
+import NotFound from "../NotFound";
 
 const ComicDetail = () => {
   const { comicId } = useParams<{ comicId: string }>();
-  const { data, isLoading } = useGetComic({ comicId });
+  const { data, isLoading, error } = useGetComic({ comicId: Number(comicId) });
+
+  if (error) {
+    return <NotFound />;
+  }
 
   return (
     <Layout>

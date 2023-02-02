@@ -3,12 +3,12 @@ import { get } from "../utils";
 import { ComicsResponse } from "./types";
 
 type Props = {
-  comicId?: string;
+  comicId?: number;
 };
 
 export const GET_COMIC = "GET_COMIC";
 
-const getComic = async (id?: string): Promise<ComicsResponse> => {
+const getComic = async (id?: number): Promise<ComicsResponse> => {
   const data = await get(`/comics/${id}`);
   return data;
 };

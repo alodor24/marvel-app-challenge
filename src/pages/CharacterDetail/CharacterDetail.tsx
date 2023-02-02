@@ -4,10 +4,17 @@ import Detail from "../../components/Detail";
 import Layout from "../../components/Layout";
 import Loader from "../../components/Loader";
 import useGetCharacter from "../../hooks/useGetCharacter";
+import NotFound from "../NotFound";
 
 const CharacterDetail = () => {
   const { characterId } = useParams<{ characterId: string }>();
-  const { data, isLoading } = useGetCharacter({ characterId });
+  const { data, isLoading, error } = useGetCharacter({
+    characterId: Number(characterId),
+  });
+
+  if (error) {
+    return <NotFound />;
+  }
 
   return (
     <Layout>
