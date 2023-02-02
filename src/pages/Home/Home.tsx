@@ -8,6 +8,7 @@ import useGetAllComics from "../../hooks/useGetAllComics";
 import { Container } from "react-bootstrap";
 import Loader from "../../components/Loader";
 import * as SC from "./Home.styles";
+import Slider from "../../components/Slider";
 
 const Home = () => {
   const { data: dataCharacters, isLoading: isLoadingCharacters } =
@@ -23,6 +24,7 @@ const Home = () => {
         <Loader />
       ) : (
         <>
+          <Slider />
           <Container>
             <h2>Characters List</h2>
             <hr />
