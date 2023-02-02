@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { CommonLinkStyle } from "../../mixins";
+import { CommonLinkButton } from "../../mixins";
 import { MEDIA_SIZE } from "../../theme";
 
 export const Wrapper = styled.div`
@@ -30,15 +30,5 @@ export const Message = styled.p`
 `;
 
 export const Button = styled(Link)`
-  ${CommonLinkStyle}
-  background-color: ${(props) => props.theme.colors.red[0]};
-  color: ${(props) => props.theme.colors.white[0]};
-  transition: ${(props) => props.theme.transition};
-  padding: 1rem 2rem;
-  font-weight: ${(props) => props.theme.fontWeight[0]};
-
-  :hover {
-    background-color: ${(props) => props.theme.colors.red[1]};
-    color: ${(props) => props.theme.colors.white[0]};
-  }
+  ${CommonLinkButton}
 `;

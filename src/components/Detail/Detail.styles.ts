@@ -50,4 +50,5 @@ export const Sidebar = styled.aside`
 export const Price = styled.span`
   font-size: 1.5rem;
   color: ${(props) => props.theme.colors.red[0]};
+  font-weight: ${(props) => props.theme.fontWeight[0]};
 `;

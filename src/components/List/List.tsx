@@ -8,9 +8,10 @@ import * as SC from "./List.styles";
 type Props = {
   data?: Character[] | Comic[];
   mode: PageViewMode;
+  showButtonCard?: boolean;
 };
 
-const List: React.FC<Props> = ({ data, mode }) => {
+const List: React.FC<Props> = ({ data, mode, showButtonCard = true }) => {
   const navigate = useNavigate();
 
   const handleRedirect = (id: string) => {
@@ -42,9 +43,11 @@ const List: React.FC<Props> = ({ data, mode }) => {
                   {item.prices[0].price > 0 ? `$${item.prices[0].price}` : "-"}
                 </SC.Price>
               )}
-              <SC.ButtonList onClick={() => handleRedirect(String(item.id))}>
-                View Detail
-              </SC.ButtonList>
+              {showButtonCard && (
+                <SC.ButtonList onClick={() => handleRedirect(String(item.id))}>
+                  View Detail
+                </SC.ButtonList>
+              )}
             </Card.Body>
           </SC.CardList>
         ))}
