@@ -18,5 +18,3 @@ export const get = (endpoint: string) => {
 
   return promise;
 };
-
-export const IMAGE_EXTENSION = "/standard_fantastic.";

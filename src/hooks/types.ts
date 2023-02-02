@@ -37,6 +37,15 @@ export type Comic = {
   };
   collectedIssues: unknown[];
   collections: unknown[];
+  comics: {
+    available: number;
+    collectionURI: string;
+    items: {
+      name: string;
+      resourceURI: string;
+    }[];
+    returned: number;
+  };
   creators: {
     available: number;
     collectionURI: string;
@@ -47,7 +56,7 @@ export type Comic = {
     date: string;
     type: string;
   }[];
-  description: unknown;
+  description: string;
   diamondCode: string;
   digitalId: number;
   ean: string;

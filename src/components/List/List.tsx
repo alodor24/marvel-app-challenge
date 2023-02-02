@@ -2,8 +2,7 @@ import { Card, Container } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import { Character, Comic } from "../../hooks/types";
-import { IMAGE_EXTENSION } from "../../utils";
-import { PageViewMode } from "../constants";
+import { ImageExtensionEnum, PageViewMode } from "../constants";
 import * as SC from "./List.styles";
 
 type Props = {
@@ -29,7 +28,9 @@ const List: React.FC<Props> = ({ data, mode }) => {
           <SC.CardList key={item.id}>
             <LazyLoadImage
               src={
-                item.thumbnail.path + IMAGE_EXTENSION + item.thumbnail.extension
+                item.thumbnail.path +
+                ImageExtensionEnum.STANDARD_FANTASTIC +
+                item.thumbnail.extension
               }
               alt={item.name || item.title}
             />
