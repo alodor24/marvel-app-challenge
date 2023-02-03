@@ -8,16 +8,14 @@ import GlobalStyle from "./globalStyles";
 import { router } from "./router";
 import theme from "./theme";
 import "bootstrap/dist/css/bootstrap.min.css";
+import App from "./App";
 
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <App />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </React.StrictMode>

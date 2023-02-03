@@ -16,6 +16,14 @@ export const PaginationWrapper = styled(Pagination)`
     }
   }
 
+  .page-item.disabled {
+    cursor: not-allowed;
+
+    .page-link {
+      background-color: ${(props) => props.theme.colors.grey[3]};
+    }
+  }
+
   .page-link {
     color: ${(props) => props.theme.colors.grey[0]};
   }
