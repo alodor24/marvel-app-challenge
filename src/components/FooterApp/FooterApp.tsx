@@ -11,7 +11,10 @@ const FooterApp = () => {
           <LazyLoadImage src={LogoMarvel} alt="Logo Marvel" width={130} />
           <SC.Text>
             Created by José Méndez |{" "}
-            <SC.ExternalLink href="" target="_blank">
+            <SC.ExternalLink
+              href="https://github.com/alodor24/marvel-app-challenge"
+              target="_blank"
+            >
               Github Repository
             </SC.ExternalLink>
           </SC.Text>
