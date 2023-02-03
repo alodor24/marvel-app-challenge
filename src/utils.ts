@@ -2,7 +2,7 @@ import axios from "axios";
 import md5 from "md5";
 
 const timestamp = Date.now();
-const BASE_URL = "http://gateway.marvel.com/v1/public";
+const BASE_URL = "https://gateway.marvel.com:443/v1/public";
 const PUBLIC_KEY = "53bcde9ea27ef56a6c7504ad9db3c768";
 const PRIVATE_KEY = "bc08f8ecce6343e726fcdff6219387d09f38251d";
 
