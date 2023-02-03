@@ -6,7 +6,7 @@ import Loader from "../../components/Loader";
 import useGetAllComics from "../../hooks/useGetAllComics";
 
 const Comics = () => {
-  const { data, isLoading } = useGetAllComics();
+  const { data, isLoading } = useGetAllComics({ offset: 0 });
 
   return (
     <Layout>

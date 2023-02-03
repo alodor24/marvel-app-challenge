@@ -12,8 +12,8 @@ import Slider from "../../components/Slider";
 
 const Home = () => {
   const { data: dataCharacters, isLoading: isLoadingCharacters } =
-    useGetAllCharacters();
-  const { data: dataComics, isLoading: isLoadingComics } = useGetAllComics();
+    useGetAllCharacters({});
+  const { data: dataComics, isLoading: isLoadingComics } = useGetAllComics({});
 
   const dataSliceCharacters = dataCharacters?.results.slice(0, 8);
   const dataSliceComics = dataComics?.results.slice(0, 8);
