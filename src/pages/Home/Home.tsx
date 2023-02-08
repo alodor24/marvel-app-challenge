@@ -34,11 +34,7 @@ const Home = () => {
               </SC.SectionButton>
             </SC.WrapperButton>
           </Container>
-          <List
-            data={dataSliceCharacters}
-            mode={PageViewMode.CHARACTERS}
-            showButtonCard={false}
-          />
+          <List data={dataSliceCharacters} mode={PageViewMode.CHARACTERS} />
 
           <Container>
             <h2>Comics List</h2>
@@ -47,11 +43,7 @@ const Home = () => {
               <SC.SectionButton to="/comics">View All Comics</SC.SectionButton>
             </SC.WrapperButton>
           </Container>
-          <List
-            data={dataSliceComics}
-            mode={PageViewMode.COMICS}
-            showButtonCard={false}
-          />
+          <List data={dataSliceComics} mode={PageViewMode.COMICS} />
 
           <div>
             <LazyLoadImage

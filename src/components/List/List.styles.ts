@@ -46,6 +46,12 @@ export const CardList = styled(Card)`
     flex-direction: column;
     justify-content: space-between;
   }
+
+  @media (max-width: 576px) {
+    :hover {
+      transform: none;
+    }
+  }
 `;
 
 export const Price = styled.p`

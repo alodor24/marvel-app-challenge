@@ -49,8 +49,6 @@ const Paginate: React.FC<Props> = ({ data }) => {
     selectedOption[option]();
   };
 
-  console.log(offset);
-
   return (
     <Container>
       <SC.Wrapper>
