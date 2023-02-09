@@ -1,4 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Layout from "../../components/Layout";
 import MarvelMasthead from "../../assets/images/marvel-masthead.jpeg";
 import List from "../../components/List";
@@ -9,6 +8,7 @@ import { Container } from "react-bootstrap";
 import Loader from "../../components/Loader";
 import * as SC from "./Home.styles";
 import Slider from "../../components/Slider";
+import { Parallax } from "react-parallax";
 
 const Home = () => {
   const { data: dataCharacters, isLoading: isLoadingCharacters } =
@@ -45,13 +45,13 @@ const Home = () => {
           </Container>
           <List data={dataSliceComics} mode={PageViewMode.COMICS} />
 
-          <div>
-            <LazyLoadImage
-              className="img-fluid"
-              src={MarvelMasthead}
-              alt="Marvel Masthead"
-            />
-          </div>
+          <Parallax
+            bgImage={MarvelMasthead}
+            bgImageAlt="Marvel Masthead"
+            strength={200}
+          >
+            <div style={{ padding: "10rem 0" }} />
+          </Parallax>
         </>
       )}
     </Layout>
