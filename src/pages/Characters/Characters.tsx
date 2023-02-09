@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { PageViewMode } from "../../components/constants";
 import Hero from "../../components/Hero";
 import Layout from "../../components/Layout";
@@ -10,7 +9,9 @@ import useGetAllCharacters from "../../hooks/useGetAllCharacters";
 
 const Characters = () => {
   const { offset } = usePaginateContext();
-  const { data, isLoading } = useGetAllCharacters({ offset: offset });
+  const { data, isLoading } = useGetAllCharacters({
+    offset: offset,
+  });
 
   return (
     <Layout>

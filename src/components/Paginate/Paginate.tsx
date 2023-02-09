@@ -18,7 +18,7 @@ const Paginate: React.FC<Props> = ({ data }) => {
   const { offset, setOffset, currentPage, setCurrentPage } =
     usePaginateContext();
 
-  const LastPage = data && Math.ceil(data.total / 20);
+  const LastPage = data && Math.floor(data.total / 20);
   const isDisabledPrevButton = offset === 0 ? true : false;
   const isDisabledNextButton = LastPage === currentPage ? true : false;
 
@@ -39,7 +39,7 @@ const Paginate: React.FC<Props> = ({ data }) => {
     },
     [OptionPaginateEnum.LAST]: () => {
       if (LastPage) {
-        setOffset(LastPage - 1 * 20);
+        setOffset(LastPage * 20);
         setCurrentPage(LastPage);
       }
     },

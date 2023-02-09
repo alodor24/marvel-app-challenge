@@ -12,7 +12,7 @@ const getAllCharacters = (offset?: number): Promise<CharactersResponse> =>
   get("/characters", offset);
 
 const useGetAllCharacters = ({ offset }: Props) => {
-  return useQuery([GET_ALL_CHARACTERS], () => getAllCharacters(offset));
+  return useQuery([GET_ALL_CHARACTERS, offset], () => getAllCharacters(offset));
 };
 
 export default useGetAllCharacters;
