@@ -3,10 +3,15 @@ import Hero from "../../components/Hero";
 import Layout from "../../components/Layout";
 import List from "../../components/List";
 import Loader from "../../components/Loader";
+import Paginate from "../../components/Paginate";
+import usePaginateContext from "../../context/PaginateContext/usePaginateContext";
 import useGetAllComics from "../../hooks/useGetAllComics";
 
 const Comics = () => {
-  const { data, isLoading } = useGetAllComics({ offset: 0 });
+  const { offsetComics, currentPageComics } = usePaginateContext();
+  const { data, isLoading } = useGetAllComics({ offset: offsetComics });
+
+  const lastPage = data && Math.floor(data.total / 20);
 
   return (
     <Layout>
@@ -16,6 +21,7 @@ const Comics = () => {
         <>
           <Hero title="Marvel Comics" />
           <List data={data?.results} mode={PageViewMode.COMICS} />
+          <Paginate lastPage={lastPage} offset={offsetComics} currentPage={currentPageComics} mode={PageViewMode.COMICS} />
         </>
       )}
     </Layout>

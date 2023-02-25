@@ -8,10 +8,12 @@ import usePaginateContext from "../../context/PaginateContext/usePaginateContext
 import useGetAllCharacters from "../../hooks/useGetAllCharacters";
 
 const Characters = () => {
-  const { offset } = usePaginateContext();
+  const { offsetCharacters, currentPageCharacters } = usePaginateContext();
   const { data, isLoading } = useGetAllCharacters({
-    offset: offset,
+    offset: offsetCharacters,
   });
+
+  const lastPage = data && Math.floor(data.total / 20);
 
   return (
     <Layout>
@@ -21,7 +23,7 @@ const Characters = () => {
         <>
           <Hero title="Marvel Characters" />
           <List data={data?.results} mode={PageViewMode.CHARACTERS} />
-          <Paginate data={data} />
+          <Paginate lastPage={lastPage} offset={offsetCharacters} currentPage={currentPageCharacters} mode={PageViewMode.CHARACTERS} />
         </>
       )}
     </Layout>

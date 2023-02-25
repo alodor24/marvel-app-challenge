@@ -12,7 +12,7 @@ const getAllComics = (offset?: number): Promise<ComicsResponse> =>
   get("/comics", offset);
 
 const useGetAllComics = ({ offset }: Props) => {
-  return useQuery([GET_ALL_COMICS], () => getAllComics(offset));
+  return useQuery([GET_ALL_COMICS, offset], () => getAllComics(offset));
 };
 
 export default useGetAllComics;

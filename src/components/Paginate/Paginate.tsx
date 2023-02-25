@@ -1,10 +1,13 @@
 import { Container, Pagination } from "react-bootstrap";
 import usePaginateContext from "../../context/PaginateContext/usePaginateContext";
-import { CharactersResponse } from "../../hooks/types";
+import { PageViewMode } from "../constants";
 import * as SC from "./Paginate.styles";
 
 type Props = {
-  data?: CharactersResponse;
+  lastPage?: number;
+  offset: number;
+  currentPage: number;
+  mode: PageViewMode;
 };
 
 enum OptionPaginateEnum {
@@ -14,34 +17,69 @@ enum OptionPaginateEnum {
   LAST = "last",
 }
 
-const Paginate: React.FC<Props> = ({ data }) => {
-  const { offset, setOffset, currentPage, setCurrentPage } =
+const Paginate: React.FC<Props> = ({ lastPage, offset, currentPage, mode }) => {
+  const { setOffsetCharacters, setCurrentPageCharacters, setOffsetComics, setCurrentPageComics } =
     usePaginateContext();
-
-  const LastPage = data && Math.floor(data.total / 20);
+  
   const isDisabledPrevButton = offset === 0 ? true : false;
-  const isDisabledNextButton = LastPage === currentPage ? true : false;
+  const isDisabledNextButton = lastPage === currentPage ? true : false;
+
+  const handlePrev = () => {
+    if (mode === PageViewMode.CHARACTERS) {
+      setOffsetCharacters((prev) => prev - 20);
+      setCurrentPageCharacters((prev) => prev - 1);
+    } else {
+      setOffsetComics((prev) => prev - 20);
+      setCurrentPageComics((prev) => prev - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (lastPage && lastPage > currentPage) {
+      if (mode === PageViewMode.CHARACTERS) {
+        setOffsetCharacters((prev) => prev + 20);
+        setCurrentPageCharacters((prev) => prev + 1);
+      } else {
+        setOffsetComics((prev) => prev + 20);
+        setCurrentPageComics((prev) => prev + 1);
+      }
+    }
+  };
+
+  const handleFirst = () => {
+    if (mode === PageViewMode.CHARACTERS) {
+      setOffsetCharacters(0);
+      setCurrentPageCharacters(1);
+    } else {
+      setOffsetComics(0);
+      setCurrentPageComics(1);
+    }
+  };
+
+  const handleLast = () => {
+    if (lastPage) {
+      if (mode === PageViewMode.CHARACTERS) {
+        setOffsetCharacters(lastPage * 20);
+        setCurrentPageCharacters(lastPage);
+      } else {
+        setOffsetComics(lastPage * 20);
+        setCurrentPageComics(lastPage);
+      }
+    }
+  };
 
   const selectedOption = {
     [OptionPaginateEnum.PREV]: () => {
-      setOffset((prev) => prev - 20);
-      setCurrentPage((prev) => prev - 1);
+      handlePrev();
     },
     [OptionPaginateEnum.NEXT]: () => {
-      if (LastPage && LastPage > currentPage) {
-        setOffset((prev) => prev + 20);
-        setCurrentPage((prev) => prev + 1);
-      }
+      handleNext();
     },
     [OptionPaginateEnum.FIRST]: () => {
-      setOffset(0);
-      setCurrentPage(1);
+      handleFirst();
     },
     [OptionPaginateEnum.LAST]: () => {
-      if (LastPage) {
-        setOffset(LastPage * 20);
-        setCurrentPage(LastPage);
-      }
+      handleLast();
     },
   };
 

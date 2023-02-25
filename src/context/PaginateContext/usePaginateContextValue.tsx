@@ -2,14 +2,21 @@ import { useState } from "react";
 import { PaginateContextData } from ".";
 
 const usePaginateContextValue = (): PaginateContextData => {
-  const [offset, setOffset] = useState<number>(0);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [offsetCharacters, setOffsetCharacters] = useState<number>(0);
+  const [currentPageCharacters, setCurrentPageCharacters] = useState<number>(1);
+
+  const [offsetComics, setOffsetComics] = useState<number>(0);
+  const [currentPageComics, setCurrentPageComics] = useState<number>(1);
 
   return {
-    offset,
-    setOffset,
-    currentPage,
-    setCurrentPage,
+    offsetCharacters,
+    setOffsetCharacters,
+    currentPageCharacters,
+    setCurrentPageCharacters,
+    offsetComics,
+    setOffsetComics,
+    currentPageComics,
+    setCurrentPageComics,
   };
 };
 
