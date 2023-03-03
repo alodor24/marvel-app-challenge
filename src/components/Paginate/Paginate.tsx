@@ -1,7 +1,7 @@
-import { Container, Pagination } from "react-bootstrap";
-import usePaginateContext from "../../context/PaginateContext/usePaginateContext";
-import { PageViewMode } from "../constants";
-import * as SC from "./Paginate.styles";
+import { Container, Pagination } from 'react-bootstrap';
+import usePaginateContext from '../../context/PaginateContext/usePaginateContext';
+import { PageViewMode } from '../constants';
+import * as SC from './Paginate.styles';
 
 type Props = {
   lastPage?: number;
@@ -11,16 +11,20 @@ type Props = {
 };
 
 enum OptionPaginateEnum {
-  PREV = "prev",
-  NEXT = "next",
-  FIRST = "first",
-  LAST = "last",
+  PREV = 'prev',
+  NEXT = 'next',
+  FIRST = 'first',
+  LAST = 'last',
 }
 
 const Paginate: React.FC<Props> = ({ lastPage, offset, currentPage, mode }) => {
-  const { setOffsetCharacters, setCurrentPageCharacters, setOffsetComics, setCurrentPageComics } =
-    usePaginateContext();
-  
+  const {
+    setOffsetCharacters,
+    setCurrentPageCharacters,
+    setOffsetComics,
+    setCurrentPageComics,
+  } = usePaginateContext();
+
   const isDisabledPrevButton = offset === 0 ? true : false;
   const isDisabledNextButton = lastPage === currentPage ? true : false;
 

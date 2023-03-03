@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { CommonLinkButton } from "../../mixins";
-import { MEDIA_SIZE } from "../../theme";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { CommonLinkButton } from '../../mixins';
+import { MEDIA_SIZE } from '../../theme';
 
 export const Wrapper = styled.div`
   display: grid;

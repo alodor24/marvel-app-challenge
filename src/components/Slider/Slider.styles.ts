@@ -1,6 +1,6 @@
-import { Carousel } from "react-bootstrap";
-import styled from "styled-components";
-import { MEDIA_SIZE } from "../../theme";
+import { Carousel } from 'react-bootstrap';
+import styled from 'styled-components';
+import { MEDIA_SIZE } from '../../theme';
 
 export const CarouselContainer = styled(Carousel)`
   margin-bottom: 4rem;

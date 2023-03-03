@@ -1,8 +1,8 @@
-import { Container, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import LogoMarvel from "../../assets/images/logo-marvel.svg";
-import { NavbarList } from "./constants";
-import * as SC from "./NavbarApp.styles";
+import { Container, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import LogoMarvel from '../../assets/images/logo-marvel.svg';
+import { NavbarList } from './constants';
+import * as SC from './NavbarApp.styles';
 
 const NavbarApp = () => {
   return (

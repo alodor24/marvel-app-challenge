@@ -1,6 +1,6 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import Loading from "../../assets/images/loading.gif";
-import * as SC from "./Loader.styles";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Loading from '../../assets/images/loading.gif';
+import * as SC from './Loader.styles';
 
 const Loader = () => {
   return (

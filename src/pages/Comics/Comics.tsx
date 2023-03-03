@@ -1,11 +1,11 @@
-import { PageViewMode } from "../../components/constants";
-import Hero from "../../components/Hero";
-import Layout from "../../components/Layout";
-import List from "../../components/List";
-import Loader from "../../components/Loader";
-import Paginate from "../../components/Paginate";
-import usePaginateContext from "../../context/PaginateContext/usePaginateContext";
-import useGetAllComics from "../../hooks/useGetAllComics";
+import { PageViewMode } from '../../components/constants';
+import Hero from '../../components/Hero';
+import Layout from '../../components/Layout';
+import List from '../../components/List';
+import Loader from '../../components/Loader';
+import Paginate from '../../components/Paginate';
+import usePaginateContext from '../../context/PaginateContext/usePaginateContext';
+import useGetAllComics from '../../hooks/useGetAllComics';
 
 const Comics = () => {
   const { offsetComics, currentPageComics } = usePaginateContext();
@@ -15,15 +15,18 @@ const Comics = () => {
 
   return (
     <Layout>
+      <Hero title="Marvel Comics" />
       {isLoading ? (
         <Loader />
       ) : (
-        <>
-          <Hero title="Marvel Comics" />
-          <List data={data?.results} mode={PageViewMode.COMICS} />
-          <Paginate lastPage={lastPage} offset={offsetComics} currentPage={currentPageComics} mode={PageViewMode.COMICS} />
-        </>
+        <List data={data?.results} mode={PageViewMode.COMICS} />
       )}
+      <Paginate
+        lastPage={lastPage}
+        offset={offsetComics}
+        currentPage={currentPageComics}
+        mode={PageViewMode.COMICS}
+      />
     </Layout>
   );
 };

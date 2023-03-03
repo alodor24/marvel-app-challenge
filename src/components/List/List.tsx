@@ -1,9 +1,9 @@
-import { Card, Container } from "react-bootstrap";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useNavigate } from "react-router-dom";
-import { Character, Comic } from "../../hooks/types";
-import { ImageExtensionEnum, PageViewMode } from "../constants";
-import * as SC from "./List.styles";
+import { Card, Container } from 'react-bootstrap';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useNavigate } from 'react-router-dom';
+import { Character, Comic } from '../../hooks/types';
+import { ImageExtensionEnum, PageViewMode } from '../constants';
+import * as SC from './List.styles';
 
 type Props = {
   data?: Character[] | Comic[];
@@ -38,8 +38,8 @@ const List: React.FC<Props> = ({ data, mode }) => {
               <Card.Title>{item.name || item.title}</Card.Title>
               {item.prices && (
                 <SC.Price>
-                  Price:{" "}
-                  {item.prices[0].price > 0 ? `$${item.prices[0].price}` : "-"}
+                  Price:{' '}
+                  {item.prices[0].price > 0 ? `$${item.prices[0].price}` : '-'}
                 </SC.Price>
               )}
               <SC.ButtonList onClick={() => handleRedirect(String(item.id))}>

@@ -1,5 +1,5 @@
-import { Pagination } from "react-bootstrap";
-import styled from "styled-components";
+import { Pagination } from 'react-bootstrap';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;

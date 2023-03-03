@@ -1,5 +1,5 @@
-import { Button, Card } from "react-bootstrap";
-import styled from "styled-components";
+import { Button, Card } from 'react-bootstrap';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;

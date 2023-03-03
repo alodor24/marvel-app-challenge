@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { PaginateContextData } from ".";
+import { useState } from 'react';
+import { PaginateContextData } from '.';
 
 const usePaginateContextValue = (): PaginateContextData => {
   const [offsetCharacters, setOffsetCharacters] = useState<number>(0);

@@ -1,6 +1,6 @@
-import { Carousel } from "react-bootstrap";
-import { carouselItem } from "./constants";
-import * as SC from "./Slider.styles";
+import { Carousel } from 'react-bootstrap';
+import { carouselItem } from './constants';
+import * as SC from './Slider.styles';
 
 const Slider = () => {
   return (

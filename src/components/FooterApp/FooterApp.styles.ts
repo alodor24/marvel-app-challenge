@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { CommonLinkStyle } from "../../mixins";
+import styled from 'styled-components';
+import { CommonLinkStyle } from '../../mixins';
 
 export const Footer = styled.footer`
   padding: 2.5rem 0;

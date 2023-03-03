@@ -1,7 +1,7 @@
-import { useLayoutEffect } from "react";
-import { useLocation } from "react-router-dom";
-import FooterApp from "../FooterApp";
-import NavbarApp from "../NavbarApp";
+import { useLayoutEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import FooterApp from '../FooterApp';
+import NavbarApp from '../NavbarApp';
 
 type Props = {
   children: React.ReactNode;

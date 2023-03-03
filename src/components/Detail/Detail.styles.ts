@@ -1,7 +1,7 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { CommonLinkStyle } from "../../mixins";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { CommonLinkStyle } from '../../mixins';
 
 export const ReturnButton = styled(Link)`
   ${CommonLinkStyle}
@@ -12,7 +12,7 @@ export const ReturnButton = styled(Link)`
   transition: ${(props) => props.theme.transition};
 
   ::before {
-    content: "< ";
+    content: '< ';
   }
 
   :hover {

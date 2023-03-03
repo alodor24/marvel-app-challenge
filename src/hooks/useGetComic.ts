@@ -1,12 +1,12 @@
-import { useQuery } from "react-query";
-import { get } from "../utils";
-import { ComicsResponse } from "./types";
+import { useQuery } from 'react-query';
+import { get } from '../utils';
+import { ComicsResponse } from './types';
 
 type Props = {
   comicId?: number;
 };
 
-export const GET_COMIC = "GET_COMIC";
+export const GET_COMIC = 'GET_COMIC';
 
 const getComic = async (id?: number): Promise<ComicsResponse> => {
   const data = await get(`/comics/${id}`);

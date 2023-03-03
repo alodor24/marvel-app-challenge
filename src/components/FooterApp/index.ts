@@ -1,1 +1,1 @@
-export { default } from "./FooterApp";
+export { default } from './FooterApp';

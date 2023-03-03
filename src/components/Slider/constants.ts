@@ -1,6 +1,6 @@
-import Slider1 from "../../assets/images/slider/slider1.jpeg";
-import Slider2 from "../../assets/images/slider/slider2.jpeg";
-import Slider3 from "../../assets/images/slider/slider3.jpeg";
+import Slider1 from '../../assets/images/slider/slider1.jpeg';
+import Slider2 from '../../assets/images/slider/slider2.jpeg';
+import Slider3 from '../../assets/images/slider/slider3.jpeg';
 
 export const carouselItem = [
   {

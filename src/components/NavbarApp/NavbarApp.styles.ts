@@ -1,8 +1,8 @@
-import { Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { CommonLinkStyle } from "../../mixins";
-import { MEDIA_SIZE } from "../../theme";
+import { Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { CommonLinkStyle } from '../../mixins';
+import { MEDIA_SIZE } from '../../theme';
 
 export const Wrapper = styled(Navbar)`
   padding: 1rem 0;

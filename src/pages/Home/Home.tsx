@@ -1,14 +1,14 @@
-import Layout from "../../components/Layout";
-import MarvelMasthead from "../../assets/images/marvel-masthead.jpeg";
-import List from "../../components/List";
-import { PageViewMode } from "../../components/constants";
-import useGetAllCharacters from "../../hooks/useGetAllCharacters";
-import useGetAllComics from "../../hooks/useGetAllComics";
-import { Container } from "react-bootstrap";
-import Loader from "../../components/Loader";
-import * as SC from "./Home.styles";
-import Slider from "../../components/Slider";
-import { Parallax } from "react-parallax";
+import Layout from '../../components/Layout';
+import MarvelMasthead from '../../assets/images/marvel-masthead.jpeg';
+import List from '../../components/List';
+import { PageViewMode } from '../../components/constants';
+import useGetAllCharacters from '../../hooks/useGetAllCharacters';
+import useGetAllComics from '../../hooks/useGetAllComics';
+import { Container } from 'react-bootstrap';
+import Loader from '../../components/Loader';
+import * as SC from './Home.styles';
+import Slider from '../../components/Slider';
+import { Parallax } from 'react-parallax';
 
 const Home = () => {
   const { data: dataCharacters, isLoading: isLoadingCharacters } =
@@ -50,7 +50,7 @@ const Home = () => {
             bgImageAlt="Marvel Masthead"
             strength={200}
           >
-            <div style={{ padding: "10rem 0" }} />
+            <div style={{ padding: '10rem 0' }} />
           </Parallax>
         </>
       )}

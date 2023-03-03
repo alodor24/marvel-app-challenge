@@ -1,7 +1,7 @@
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
-import { Character, Comic } from "../../hooks/types";
-import { ImageExtensionEnum, PageViewMode } from "../constants";
-import * as SC from "./Detail.styles";
+import { Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { Character, Comic } from '../../hooks/types';
+import { ImageExtensionEnum, PageViewMode } from '../constants';
+import * as SC from './Detail.styles';
 
 type Props = {
   data?: Character[] | Comic[];
@@ -10,7 +10,7 @@ type Props = {
 
 const Detail: React.FC<Props> = ({ data, mode }) => {
   const pathToReturn =
-    mode === PageViewMode.CHARACTERS ? "/characters" : "/comics";
+    mode === PageViewMode.CHARACTERS ? '/characters' : '/comics';
 
   return (
     <Container>
@@ -33,7 +33,7 @@ const Detail: React.FC<Props> = ({ data, mode }) => {
             <Col md={7} lg={6}>
               <SC.Title>{item.name || item.title}</SC.Title>
               <SC.Description>
-                {item.description ? item.description : "No Data"}
+                {item.description ? item.description : 'No Data'}
               </SC.Description>
             </Col>
 
@@ -57,11 +57,11 @@ const Detail: React.FC<Props> = ({ data, mode }) => {
                     <hr />
                     {item.prices && (
                       <p>
-                        Price:{" "}
+                        Price:{' '}
                         {item.prices[0].price > 0 ? (
                           <SC.Price>${item.prices[0].price}</SC.Price>
                         ) : (
-                          "-"
+                          '-'
                         )}
                       </p>
                     )}

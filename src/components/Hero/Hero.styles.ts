@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { MEDIA_SIZE } from "../../theme";
+import styled from 'styled-components';
+import { MEDIA_SIZE } from '../../theme';
 
 export const Title = styled.h1`
   text-align: center;

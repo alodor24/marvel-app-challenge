@@ -1,7 +1,7 @@
-import { Container } from "react-bootstrap";
-import { Parallax } from "react-parallax";
-import * as SC from "./Hero.styles";
-import MarvelMasthead from "../../assets/images/marvel-masthead.jpeg";
+import { Container } from 'react-bootstrap';
+import { Parallax } from 'react-parallax';
+import * as SC from './Hero.styles';
+import MarvelMasthead from '../../assets/images/marvel-masthead.jpeg';
 
 type Props = {
   title?: string;
