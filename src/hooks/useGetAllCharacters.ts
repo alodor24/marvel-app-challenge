@@ -12,7 +12,8 @@ export const GET_ALL_CHARACTERS = 'GET_ALL_CHARACTERS';
 const getAllCharacters = (
   offset?: number,
   nameStartsWith?: string
-): Promise<CharactersResponse> => get('/characters', offset, nameStartsWith);
+): Promise<CharactersResponse> =>
+  get('/characters', { offset, nameStartsWith });
 
 const useGetAllCharacters = ({ offset, nameStartsWith }: Props) => {
   return useQuery([GET_ALL_CHARACTERS, offset, nameStartsWith], () =>

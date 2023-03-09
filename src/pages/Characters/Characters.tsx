@@ -34,6 +34,8 @@ const Characters = () => {
 
   const handleStoreValue = (value: string) => {
     setValueCharacterStored(value);
+    setOffsetCharacters(0);
+    setCurrentPageCharacters(1);
   };
 
   const handleStoreValueDebounced = useCallback(
