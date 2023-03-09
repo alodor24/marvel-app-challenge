@@ -21,6 +21,32 @@
   "rules": {
     "prettier/prettier": "warn",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-react": "off"
+    "react/jsx-uses-react": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "log",
+          "warn",
+          "dir",
+          "timeLog",
+          "assert",
+          "clear",
+          "count",
+          "countReset",
+          "group",
+          "groupEnd",
+          "table",
+          "dirxml",
+          "error",
+          "groupCollapsed",
+          "Console",
+          "profile",
+          "profileEnd",
+          "timeStamp",
+          "context"
+        ]
+      }
+    ]
   }
 }

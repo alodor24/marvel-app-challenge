@@ -4,15 +4,20 @@ import { CharactersResponse } from './types';
 
 type Props = {
   offset?: number;
+  nameStartsWith?: string;
 };
 
 export const GET_ALL_CHARACTERS = 'GET_ALL_CHARACTERS';
 
-const getAllCharacters = (offset?: number): Promise<CharactersResponse> =>
-  get('/characters', offset);
+const getAllCharacters = (
+  offset?: number,
+  nameStartsWith?: string
+): Promise<CharactersResponse> => get('/characters', offset, nameStartsWith);
 
-const useGetAllCharacters = ({ offset }: Props) => {
-  return useQuery([GET_ALL_CHARACTERS, offset], () => getAllCharacters(offset));
+const useGetAllCharacters = ({ offset, nameStartsWith }: Props) => {
+  return useQuery([GET_ALL_CHARACTERS, offset, nameStartsWith], () =>
+    getAllCharacters(offset, nameStartsWith)
+  );
 };
 
 export default useGetAllCharacters;

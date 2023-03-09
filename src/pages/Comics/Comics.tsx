@@ -11,7 +11,7 @@ const Comics = () => {
   const { offsetComics, currentPageComics } = usePaginateContext();
   const { data, isLoading } = useGetAllComics({ offset: offsetComics });
 
-  const lastPage = data && Math.floor(data.total / 20);
+  const lastPage = data && Math.ceil(data.total / 20);
 
   return (
     <Layout>

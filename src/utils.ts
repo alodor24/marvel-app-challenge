@@ -8,11 +8,16 @@ const PRIVATE_KEY = 'bc08f8ecce6343e726fcdff6219387d09f38251d';
 
 const hash = md5(String(timestamp) + PRIVATE_KEY + PUBLIC_KEY);
 
-export const get = (endpoint: string, offset?: number) => {
+export const get = (
+  endpoint: string,
+  offset?: number,
+  nameStartsWith?: string
+) => {
   const url = `${BASE_URL}${endpoint}`;
 
   const customParams = {
     offset: offset,
+    nameStartsWith: nameStartsWith,
     ts: timestamp,
     apikey: PUBLIC_KEY,
     hash: hash,
@@ -22,3 +27,5 @@ export const get = (endpoint: string, offset?: number) => {
     .get(url, { params: customParams })
     .then((resp) => resp.data.data);
 };
+
+export const DEBOUNCE_TIME = 1000;
