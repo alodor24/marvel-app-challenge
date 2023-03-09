@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   box-shadow: ${(props) => props.theme.shadow[1]};
 `;
 
-export const SerachIcon = styled.img`
+export const SearchIcon = styled.img`
   width: 2rem;
   position: absolute;
   margin-top: 0.5rem;
@@ -27,4 +27,12 @@ export const Input = styled(Form.Control)`
     border-color: transparent;
     box-shadow: none;
   }
+`;
+
+export const CloseIcon = styled.img`
+  width: 1.5rem;
+  position: absolute;
+  top: 2.7rem;
+  right: 2.7rem;
+  cursor: pointer;
 `;

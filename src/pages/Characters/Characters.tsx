@@ -13,7 +13,12 @@ import useSearch from '../../hooks/useSearch';
 import { DEBOUNCE_TIME } from '../../utils';
 
 const Characters = () => {
-  const { offsetCharacters, currentPageCharacters } = usePaginateContext();
+  const {
+    offsetCharacters,
+    currentPageCharacters,
+    setOffsetCharacters,
+    setCurrentPageCharacters,
+  } = usePaginateContext();
   const { valueCharacterStored, setValueCharacterStored } = useSearch();
   const [searchValue, setSearchValue] = useState<string>(valueCharacterStored);
 
@@ -41,6 +46,13 @@ const Characters = () => {
     handleStoreValueDebounced(event.target.value);
   };
 
+  const handleClear = () => {
+    setSearchValue('');
+    setValueCharacterStored('');
+    setOffsetCharacters(0);
+    setCurrentPageCharacters(1);
+  };
+
   return (
     <Layout>
       <Hero title="Marvel Characters" />
@@ -48,6 +60,7 @@ const Characters = () => {
         mode={PageViewMode.CHARACTERS}
         value={searchValue}
         onChange={handleChange}
+        handlerClear={handleClear}
       />
       {isLoading ? (
         <Loader />
