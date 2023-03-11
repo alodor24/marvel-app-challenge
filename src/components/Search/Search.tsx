@@ -28,6 +28,7 @@ const Search: React.FC<props> = ({ mode, value, onChange, handlerClear }) => {
           <SC.CloseIcon
             src={CloseIcon}
             alt="Close Icon"
+            title="Clear Search"
             onClick={handlerClear}
           />
         )}

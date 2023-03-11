@@ -5,6 +5,7 @@ import Hero from '../../components/Hero';
 import Layout from '../../components/Layout';
 import List from '../../components/List';
 import Loader from '../../components/Loader';
+import NotData from '../../components/NotData';
 import Paginate from '../../components/Paginate';
 import Search from '../../components/Search';
 import usePaginateContext from '../../context/PaginateContext/usePaginateContext';
@@ -67,7 +68,13 @@ const Comics = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <List data={data?.results} mode={PageViewMode.COMICS} />
+        <>
+          {data && data.results.length > 0 ? (
+            <List data={data?.results} mode={PageViewMode.COMICS} />
+          ) : (
+            <NotData />
+          )}
+        </>
       )}
       {data && data.total > data.count && (
         <Paginate

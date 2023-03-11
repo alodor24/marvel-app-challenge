@@ -11,6 +11,7 @@ import usePaginateContext from '../../context/PaginateContext/usePaginateContext
 import useGetAllCharacters from '../../hooks/useGetAllCharacters';
 import useSearch from '../../hooks/useSearch';
 import { DEBOUNCE_TIME } from '../../utils';
+import NotData from '../../components/NotData';
 
 const Characters = () => {
   const {
@@ -67,7 +68,13 @@ const Characters = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <List data={data?.results} mode={PageViewMode.CHARACTERS} />
+        <>
+          {data && data.results.length > 0 ? (
+            <List data={data?.results} mode={PageViewMode.CHARACTERS} />
+          ) : (
+            <NotData />
+          )}
+        </>
       )}
       {data && data.total > data.count && (
         <Paginate
