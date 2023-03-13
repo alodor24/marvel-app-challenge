@@ -9,14 +9,26 @@ import Loader from '../../components/Loader';
 import * as SC from './Home.styles';
 import Slider from '../../components/Slider';
 import { Parallax } from 'react-parallax';
+import GridItems from '../../components/GridItems';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+  const [offset, setOffset] = useState<number | undefined>(undefined);
   const { data: dataCharacters, isLoading: isLoadingCharacters } =
-    useGetAllCharacters({});
-  const { data: dataComics, isLoading: isLoadingComics } = useGetAllComics({});
+    useGetAllCharacters({
+      offset: offset,
+    });
+  const { data: dataComics, isLoading: isLoadingComics } = useGetAllComics({
+    offset: offset,
+  });
 
-  const dataSliceCharacters = dataCharacters?.results.slice(0, 8);
-  const dataSliceComics = dataComics?.results.slice(0, 8);
+  const dataSliceCharacters = dataCharacters?.results.slice(0, 6);
+  const dataSliceComics = dataComics?.results.slice(0, 6);
+
+  useEffect(() => {
+    const numberRandom = Math.floor(Math.random() * 100);
+    setOffset(numberRandom);
+  }, []);
 
   return (
     <Layout>
@@ -34,7 +46,7 @@ const Home = () => {
               </SC.SectionButton>
             </SC.WrapperButton>
           </Container>
-          <List data={dataSliceCharacters} mode={PageViewMode.CHARACTERS} />
+          <GridItems data={dataSliceCharacters} />
 
           <Container>
             <h2>Comics List</h2>
@@ -43,7 +55,7 @@ const Home = () => {
               <SC.SectionButton to="/comics">View All Comics</SC.SectionButton>
             </SC.WrapperButton>
           </Container>
-          <List data={dataSliceComics} mode={PageViewMode.COMICS} />
+          <GridItems data={dataSliceComics} />
 
           <Parallax
             bgImage={MarvelMasthead}
