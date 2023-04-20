@@ -3,21 +3,9 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 2rem;
   padding: 5rem 0;
-
-  @media (max-width: 767px) {
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 992px) and (max-width: 1199px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 `;
 
 export const CardList = styled(Card)`
