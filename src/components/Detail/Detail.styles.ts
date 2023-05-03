@@ -52,3 +52,12 @@ export const Price = styled.span`
   color: ${(props) => props.theme.colors.red[0]};
   font-weight: ${(props) => props.theme.fontWeight[0]};
 `;
+
+export const LinkSidebar = styled(Link)`
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.grey[4]};
+
+  :hover {
+    color: ${(props) => props.theme.colors.red[0]};
+  }
+`;

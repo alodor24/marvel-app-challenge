@@ -12,6 +12,13 @@ const Detail: React.FC<Props> = ({ data, mode }) => {
   const pathToReturn =
     mode === PageViewMode.CHARACTERS ? '/characters' : '/comics';
 
+  const getIdComic = (urlComic: string) => {
+    const idRegex = /\d+$/;
+    const match = urlComic.match(idRegex);
+
+    if (match) return match[0];
+  };
+
   return (
     <Container>
       <SC.ReturnButton to={pathToReturn}>Go back</SC.ReturnButton>
@@ -46,7 +53,11 @@ const Detail: React.FC<Props> = ({ data, mode }) => {
                     <ListGroup variant="flush">
                       {item.comics.items.map((comic, index) => (
                         <ListGroup.Item key={index}>
-                          {comic.name}
+                          <SC.LinkSidebar
+                            to={`/comics/${getIdComic(comic.resourceURI)}`}
+                          >
+                            {comic.name}
+                          </SC.LinkSidebar>
                         </ListGroup.Item>
                       ))}
                     </ListGroup>
