@@ -31,7 +31,7 @@ const Characters = () => {
         : undefined,
   });
 
-  const lastPage = data && Math.ceil(data.total / 20);
+  const lastPage = data && Math.floor(data.total / 20);
 
   const handleStoreValue = (value: string) => {
     setValueCharacterStored(value);
